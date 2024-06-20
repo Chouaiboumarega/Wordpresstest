@@ -15,7 +15,12 @@
     <a class="navbar-brand" href="#">Navbar</a>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <?php  wp_nav_menu(['theme_location' => 'header']); ?>
+        <?php  wp_nav_menu([
+          'theme_location' => 'header',
+          'container' => false,
+          'menu_class' => 'navbar-nav mr-auto'
+          
+          ]); ?>
 
         <!--
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -41,6 +46,8 @@
         </li>
       </ul>
         -->
+      <?= get_search_form() ?>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
